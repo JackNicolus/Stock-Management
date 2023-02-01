@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function AboutPage() {
   return (
@@ -10,6 +11,7 @@ export default function AboutPage() {
       <p>
         This is about page for Jack
       </p>
+      <Link href="/">Home</Link>
       </>
   )
 }
