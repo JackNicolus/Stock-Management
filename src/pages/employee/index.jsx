@@ -17,9 +17,9 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>Employees</title>
+        <title>Employee</title>
       </Head>
-      <h1>Employees</h1>
+      <h1>Employee List</h1>
       <div>
         <ul>
           {list}
