@@ -28,11 +28,11 @@ export default async function handler(req, res) {
             console.error(error)
             }
         } 
-    
+
     else {
         try {
         res.setHeader('Allow', ['GET', 'DELETE'])
-        res.status(405).end(`Method ${req.method} Not Allowed`)
+        res.status(405).send(`Method ${req.method} Not Allowed`)
     } catch (error){
         console.error(error)
         }

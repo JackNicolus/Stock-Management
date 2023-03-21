@@ -28,7 +28,7 @@ export default async function handler(req, res) {
     else {
         try {
         res.setHeader('Allow', ['GET', 'POST'])
-        res.status(405).end(`Method ${req.method} Not Allowed`)
+        res.status(405).send(`Method ${req.method} Not Allowed`)
         } catch (error) {
             console.error(error)
         }
