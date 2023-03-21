@@ -14,7 +14,7 @@ export default async function handler(req, res) {
         const doc = await Author.findOne({ _id : id})
         res.status(200).json(doc)
         } catch (error) {
-            console.log(`error:{err}`)
+            console.log(`error${err}`)
             }
     } 
     
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
         const deletedDoc = await Author.deleteOne({ _id: id })
         res.status(200).json(deletedDoc)
         } catch (error) {
-            console.log(`error:{err}`)
+            console.log(`error${err}`)
             }
         } 
     
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
         res.setHeader('Allow', ['GET', 'DELETE'])
         res.status(405).end(`Method ${req.method} Not Allowed`)
     } catch (error){
-        console.log(`error:{err}`)
+        console.log(`error${err}`)
         }
     }
 }

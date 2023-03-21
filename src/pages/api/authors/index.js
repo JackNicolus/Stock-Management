@@ -10,7 +10,7 @@ export default async function handler(req, res) {
         const docs = await Author.find()
         res.status(200).json(docs)
         } catch (error) {
-            console.log(`error:{err}`)
+            console.log(`error${err}`)
         }
     } 
     
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
         const doc = await Author.create(req.body)
         res.status(201).json(doc)
         } catch (error) {
-            console.log(`error:{err}`)
+            console.log(`error${err}`)
         }
     } 
     
@@ -28,7 +28,7 @@ export default async function handler(req, res) {
         res.setHeader('Allow', ['GET', 'POST'])
         res.status(405).end(`Method ${req.method} Not Allowed`)
         } catch (error) {
-            console.log(`error:{err}`)
+            console.log(`error${err}`)
         }
     }
 }
