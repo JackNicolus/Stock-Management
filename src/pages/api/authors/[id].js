@@ -10,18 +10,30 @@ export default async function handler(req, res) {
 
     //Get only one document
     if (req.method === 'GET') {
+        try {
         const doc = await Author.findOne({ _id : id})
         res.status(200).json(doc)
+        } catch (error) {
+            console.error(error)
+            }
     } 
     
     else if (req.method === 'DELETE') {
+        try {
         const deletedDoc = await Author.deleteOne({ _id: id })
         res.status(200).json(deletedDoc)
-    } 
+        } catch (error) {
+            console.error(error)
+            }
+        } 
     
     else {
+        try {
         res.setHeader('Allow', ['GET', 'DELETE'])
         res.status(405).end(`Method ${req.method} Not Allowed`)
+    } catch (error){
+        console.error(error)
+        }
     }
 }
     const authorSchema = new Schema({
