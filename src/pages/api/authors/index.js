@@ -1,3 +1,5 @@
+process.env.NODE_ENV = "development";
+
 import {connect, model, models, Schema} from "mongoose"
 const connectionString = "mongodb+srv://admin:bookstoreMS@bookstorems.qgl1qca.mongodb.net/bookstore"
 
